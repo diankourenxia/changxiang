@@ -1,18 +1,18 @@
 <template>
 	<view class="page">
 		<!--  -->
-		<view class="topView">
-			<!-- <image src="https://oss.chuangliukeji.com/backstage/2024-06-24/ace42f55bf21440584b6689683851891.png" class="topImg1"></image> -->
-			<view class="topBox1">
+		<!-- <view class="topView"> -->
+			<!-- <view class="topBox1">
 				1 元租
 				<view class="special-text">苹果</view>旗舰
 			</view>
 			<view class="topBox2">
 				正品保障 免押租
-			</view>
-		</view>
+			</view> -->
+		<!-- </view> -->
 		<!--  -->
 		<view class="headerView">
+			
 			<!-- <view class="h_box">
 				<view v-for="(item,index) in list.headList" :key="index" class="h_box_list" @click="gotoProduct(item.productId)">
 					<view class="list_imgBox">
@@ -27,53 +27,43 @@
 			</view> -->
 		</view>
 		<!-- 官方严选 -->
+		<view class="banner-2">
+			<image src="https://oss.changxiangwl.cn/backstage/2024-10-24/c3d98670626d4cde8444981fc8f4c08a.jpg" mode="aspectFit"></image>
+		</view>
 		<view class="shopView">
-			<view class="shopTitle">
-				<image src="https://oss.chuangliukeji.com/backstage/2024-06-24/99ab00f654214441bfa3138e7c09e0cc.png" class="title_img"></image>
-				<text class="title_text">官方严选</text>
-				<image src="https://oss.chuangliukeji.com/backstage/2024-06-24/99ab00f654214441bfa3138e7c09e0cc.png" class="title_img l2"></image>
-			</view>
+			
 			<view class="shop_Box">
 				<view class="shop_box_list product-item" v-for="(item,index) in list" :key="index" @click="gotoProduct(item.productId)">
-					<image :src="item.image" class="product-image"  mode="aspectFit"></image>
-					  <view class="product-info">
-
-					<view class="product-name">{{filterText(item.name)}}</view>
-					<view class="product-desc">{{filterDesc(item.name)}}</view>
-					<view class="product-price">
-						<!-- <view class="product-price-only" v-if="index==0">
-							 仅剩{{index==0?3:index==1?2:index==2?3:index==3?1:3}}台
-						</view> -->
-						<view class="product-price-price"
-						>
-							￥<text style="font-size: 60rpx;font-weight: 1000;margin-bottom: 24rpx;margin-left:4rpx;margin-right:4rpx"> 1 </text>/首月
-						</view>
-						<image src="https://oss.changxiangwl.cn/backstage/2024-10-16/e46b015621644881b8f029bc02bb2ff1.png" class="list_shop_botImg1" mode="aspectFit"></image>
-					</view>
-						
-					</view>
+					<image :src="item.image" class="product-image"   mode="widthFix"></image>
 				</view>
 			</view>
-			<!-- <view class="shop_Box">
-				<view class="shop_box_list product-item" v-for="(item,index) in list" :key="index" @click="gotoProduct(item.productId)">
-					<image :src="item.src" class="list_shop_image product-image"></image>
-					  <view class="product-info">
-			
-					<view class="list_shop_title product-name">{{filterText(item.name)}}</view>
-					<view class="list_shop_bot product-price">
-						<view>
-							￥<text style="font-size: 38rpx;font-weight: 700;"> 1</text>/首月
-						</view>
-						<image src="https://oss.changxiangwl.cn/backstage/2024-10-16/35e00f9350a54df7b78c2d49e31820fd.png" class="list_shop_botImg1"></image>
-					</view>
-						
-					</view>
-				</view>
-			</view> -->
 		</view>
+		<view class="banner-2">
+			<image src="https://oss.changxiangwl.cn/backstage/2024-10-24/c3d98670626d4cde8444981fc8f4c08a.jpg" mode="aspectFit"></image>
+		</view>
+		<view class="shopView">
+			
+			<view class="shop_Box_2">
+				<view class="shop_box_list product-item-2" v-for="(item,index) in list2" :key="index" @click="gotoProduct(item.productId)">
+					<image :src="item.image" class="product-image"   mode="widthFix"></image>
+				</view>
+			</view>
+		</view>
+		<view class="banner-2" style="height:10.1vw">
+			<image src="https://oss.changxiangwl.cn/backstage/2024-10-24/5dc558e5a4734668b65210cb903f2ff2.jpg" mode="aspectFit"></image>
+		</view>
+		<view class="shopView">
+			
+			<view class="shop_Box">
+				<view class="shop_box_list product-item" v-for="(item,index) in list3" :key="index" @click="gotoProduct(item.productId)">
+					<image :src="item.image" class="product-image"   mode="widthFix"></image>
+				</view>
+			</view>
+		</view>
+		
 		<!-- fixed -->
 		<view class="bottomImg">
-			<image src="https://oss.changxiangwl.cn/backstage/2024-10-16/9bae73299a7d451e88c3bc1fd5687229.png" mode="aspectFit" class="bottomImg_img"></image>
+			<!-- <image src="https://oss.changxiangwl.cn/backstage/2024-10-16/9bae73299a7d451e88c3bc1fd5687229.png" mode="aspectFit" class="bottomImg_img"></image> -->
 		</view>
 	</view>
 </template>
@@ -86,7 +76,36 @@
 	export default {
 		data(){
 			return {
-				list:{},
+				list:[{
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/ae56e75fe56e4812968d465c43e0c3be.jpg',
+					productId:''
+				},{
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/a2d95624ba2e41ea9eb60c7558fc24af.jpg',
+					productId:''
+				}],
+				list2:[{
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/2ac51250811041dd97695bdf9ad1a9de.jpg',
+					productId:''
+				},{
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/0e04f751fda44d2d9cdb2390b01b6d91.jpg',
+					productId:''
+				},{
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/7fc9cafee49f4013976982ed117b3df9.jpg',
+					productId:''
+				}],
+				list3:[{
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/2bbfba019e934dd78633fd0f2c3f2cf7.jpg',
+					productId:''
+				},{
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/9f652a4ee36040399bed0c3f95950f17.jpg',
+					productId:''
+				},{
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/817add18c2ea4943bb76c784b5d25ee2.jpg',
+					productId:''
+				},{
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/a0f6fb0950174e288285ebe3b70d16b7.jpg',
+					productId:''
+				}],
 			}
 		},
 		onLoad(e) {
@@ -95,7 +114,7 @@
 			  this.$setGlobalData("subFenYongChannelId", fenyongId); // 存储到全局
 			  channelMaiDianHandler(); // 进行埋点上传
 			}
-			this.selectFashionList();
+			// this.selectFashionList();
 		},
 		methods:{
 
@@ -137,7 +156,7 @@
 		box-sizing: border-box;
 	}
 	.page{
-		background-color: black;
+background: rgb(190,208,234);
 		min-height: 100vh;
 		padding-bottom: 60rpx;
 		position: relative;
@@ -147,12 +166,9 @@
 			background: black;
 			position: relative;
 			.topImg1 {
-				width: 120rpx;
-				height: 69rpx;
-				z-index: 999;
-				position: absolute;
-				top: 30rpx;
-				left: 30rpx;
+				width: 100%;
+				// height: 69rpx;
+				
 			}
 			view {
 				position: absolute;
@@ -201,16 +217,27 @@
 				transform: rotate(-2deg);
 			}
 		}
-		
+		.banner-2{
+			width: 100%;
+			    text-align: center;
+			    display: flex;
+				justify-content: center;
+				image{
+					width: 100vw;
+					height:13vw;
+					align-self: center;
+				}
+		}
 		.headerView {
 			// position: absolute;
-			width:100%;
-			height: 610rpx;
+			width:100vw;
+			height:63vw;
+		   
 			// top: 192rpx;
 			// left: 18rpx;
-			background: url('https://oss.changxiangwl.cn/backstage/2024-10-16/5fa436a2e0404bb690adbb3bfa575ce2.jpg') no-repeat;
-			background-size: contain;
-			  background-position: center; /* 图片居中 */
+			background: url('https://oss.changxiangwl.cn/backstage/2024-10-24/f1af82377a1c4d86b4682ebc257cee3a.jpg') no-repeat;
+			  background-size: cover; /* 保持比例，图片会填满容器，可能会被裁剪 */
+			    background-position: 0 0; /* 图片居中显示 */
 
 			
 			.h_box {
@@ -272,7 +299,7 @@
 			}
 		}
 		.shopView {
-			margin-top: 66rpx;
+			// margin-top: -8rpx;
 			
 			.shopTitle {
 				width: 100%;
@@ -294,26 +321,46 @@
 					color: #FFFFFF;
 				}
 			}
-			
-			.shop_Box {
-				padding: 32rpx 20rpx 0rpx 20rpx;
+			.shop_Box_2{
 				width: 100%;
 				display: flex;
 				flex-wrap: wrap;
-				
+				background: rgb(190,208,234);
+				 flex:auto;
+				 justify-content: center; /* 水平居中对齐 */
+				   align-items: center; /* 垂直居中对齐 */
+				.product-item-2 {
+				  display: flex; /* 使用 Flexbox 布局 */
+				  align-items: center; /* 垂直居中对齐 */
+				  margin-bottom:10rpx;
+				  width:33%;
+				  :last-child{
+					  margin-left: -1px;
+				  }
+				 
+				}
+			}
+			.shop_Box {
+				// padding: 32rpx 20rpx 0rpx 20rpx;
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				background: rgb(190,208,234);
+				 flex:auto;
+				 justify-content: center; /* 水平居中对齐 */
+				   align-items: center; /* 垂直居中对齐 */
+				 gap: 25rpx;
 				.product-item {
 				  display: flex; /* 使用 Flexbox 布局 */
 				  align-items: center; /* 垂直居中对齐 */
-				  padding: 10px; /* 内边距 */
-				  border: 1px solid #ddd; /* 边框（可选） */
+				  margin-bottom:10rpx;
+				  width:350rpx;
+				 
 				}
 				
+				
 				.product-image {
-				  width: 80px; /* 设置图片宽度 */
-				  height: 80px; /* 设置图片高度 */
-				  margin-right: 10px; /* 图片和文本之间的间距 */
-				      flex: 1;
-				      width: 30%;
+				  flex: 1;
 				}
 				
 				.product-info {
@@ -370,17 +417,7 @@
 					  }
 				}
 				.shop_box_list {
-					width: 100%;
-					height: 266rpx;
-					background: rgb(32,32,30);
-					border-radius: 16rpx;
-					border:none;
-					// margin-right: 0rpx;
-					margin-bottom: 20rpx;
-					padding-top: 8rpx;
-					position: relative;
-					text-align: center;
-					color:white;
+					
 					
 					.list_shop_image {
 						width: 200rpx;

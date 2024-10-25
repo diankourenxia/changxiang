@@ -35,6 +35,7 @@
 						@click="$onTo(item.link)"></image>
 				</swiper-item>
 			</swiper>
+			
 		</view>
 		
 		<!--  -->
@@ -184,6 +185,13 @@
 				menuTop: 0, //胶囊通知栏top
 				menuHeight: 0, //胶囊高度
 				productList: [],//底部推荐
+				lists: [
+							'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
+							'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
+							'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
+							'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
+							'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+						]
 			};
 		},
 		components: {
@@ -428,7 +436,9 @@
 	view {
 		box-sizing: border-box;
 	}
-
+    .swiper-slide{
+		overflow:hidden;
+	}
 	.backgroundlinear {
 		// background: linear-gradient(#17355b, #9acbd0);
 	}

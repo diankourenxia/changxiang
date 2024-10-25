@@ -35,9 +35,9 @@
 						@click="$onTo(item.link)"></image>
 				</swiper-item>
 			</swiper> -->
-			<z-swiper v-model="lists" :options="{slidesPerView : 2,spaceBetween : 20,loop:true}">
-						  <z-swiper-item v-for="(item,index) in lists" :key="index" @click="$onTo(`/pages/activity/activity`);">
-						    <image class="image" :src="item" mode="aspectFit"> </image>
+			<z-swiper v-model="lists" :options="{slidesPerView : 2,spaceBetween :20 ,loop:true,autoplay:true,width:280}"  @slideChange="onChange">
+						  <z-swiper-item v-for="(item,index) in lists" :key="index">
+						    <image :src="item" mode="aspectFit" :class="{'swiper-image':true,active: activeIndex === index }" @click="$onTo('/pages/activity/activity')"> </image>
 						  </z-swiper-item>
 						</z-swiper>
 		</view>
@@ -180,6 +180,7 @@
 				currentMain: 0, //广告位左边轮播图列表下标
 				specialSub: [], //广告位右边
 				iconList: [], //金刚区列表
+				activeIndex:0,
 				flowImg: [
 					// "../../static/home/banner_icon_1.png",//免押图片
 					"../../static/home/banner_icon_2.png",
@@ -190,11 +191,10 @@
 				menuHeight: 0, //胶囊高度
 				productList: [],//底部推荐
 				lists: [
-											'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe1.jpg',
-											'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe2.jpg',
-											'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe3.jpg',
-											'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe4.jpg',
-											'https://cdn.zebraui.com/zebra-ui/images/swipe-demo/swipe5.jpg',
+											'https://oss.changxiangwl.cn/backstage/2024-10-18/9e4d92c0f7ea4890a400fa93cddeb743.png',
+											'https://oss.changxiangwl.cn/backstage/2024-10-18/eedd4e116c2448099e19431c80496ccb.png',
+											'https://oss.changxiangwl.cn/backstage/2024-10-18/e751ee1df7f140df9c0275532b0feb4f.png',
+											
 										],
 				tabLists:[]
 			};
@@ -385,7 +385,8 @@
 			},
 			//获取广告位左边轮播图当前页数
 			onChange(e) {
-				this.currentMain = e.detail.current;
+      this.activeIndex = e.activeIndex;
+				// this.currentMain = e.detail.current;
 			},
 			//获取banner图当前页数
 			onBanner(e) {
@@ -454,8 +455,20 @@
 	view {
 		box-sizing: border-box;
 	}
-/deep/ .swiper-slide{
-		overflow:hidden;
+	/deep/.swiper{
+		height:100%;
+	}
+/deep/.swiper-slide{
+	height:180rpx;
+}
+	/deep/.swiper-slide image{
+	  transition: transform 0.3s ease;
+	  transform: scale(0.8); /* 默认缩小 */
+	  height: 100%;
+	}
+	
+	/deep/.swiper-slide-active image{
+	  transform: scale(1); /* 当前索引时放大 */
 	}
 	.backgroundlinear {
 		// background: linear-gradient(#17355b, #9acbd0);
@@ -528,6 +541,10 @@
 		}
 
 		.banner {
+			height:360rpx;
+			padding-top:20rpx;
+			background: none;
+			
 			.swiperbanner {
 				height: 168rpx;
 				width: 100%;

@@ -309,15 +309,16 @@ export default {
       type: false,
 	  urlClass:'hzsx/userCertification/userCertificationAuth',//提交地址
 	  array:['父母','子女','兄弟','姐妹','亲戚','朋友','配偶','同事'],
-	  improntInfo:[{//紧急联系人信息
-		  realname:'',
-		  phone:'',
-		  userIndex:'',
-	  },{
-		  realname:'',
-		  phone:'',
-		  userIndex:'',
-	  }]
+	  improntInfo:[]
+	  // improntInfo:[{//紧急联系人信息
+		 //  realname:'',
+		 //  phone:'',
+		 //  userIndex:'',
+	  // },{
+		 //  realname:'',
+		 //  phone:'',
+		 //  userIndex:'',
+	  // }]
     };
   },
 
@@ -512,7 +513,7 @@ export default {
 		imagesWz:this.imageWz,
         limitDate,
         ...this.identityData,
-		userContactsInfoDtoList:improntInfo
+		// userContactsInfoDtoList:improntInfo
       } : {
         uid: this.$getUid(),
         userName,
@@ -529,7 +530,7 @@ export default {
 		imagesWz:this.imageWz,
         limitDate,
         ...this.identityData,
-		userContactsInfoDtoList:improntInfo
+		// userContactsInfoDtoList:improntInfo
       };
 	  console.log("postObj",postObj);
       const { postData, pass } = this.$postDataGuard(postObj);

@@ -180,19 +180,31 @@
 				</view>
 			</view>
 			<!-- 留言 -->
-			<view class="message">
+			<view class="message marginBotton">
 				<text>备注：</text>
 				<input placeholder="买家留言" class="text-area" @input="getRemark" />
 			</view>
 		</view>
 		<!-- 实名认证 -->
-		<view class="authentication quanpinquanjiao fxpad marginBotton" v-if="!loadingShiming && !hasCertification">
-			<view>实名认证</view>
-			<view class="item2" @click="umenPlus2()">
-				<text>请认证</text>
-				<image mode="scaleToFill" class="arrow" src="../../static/my/jiantou.png"></image>
+		<!-- <view id="count_big_box" @click="umenPlus2()" :class="['authentication', 'quanpinquanjiao', 'fxpad' ,'marginBotton',isFlashRed ? 'flash-red' : '' ]" v-if="!loadingShiming && !hasCertification">
+			<view class="shiming-left">
+				<view class="shiming-tip">姓名   <view class="shiming-input">
+					请输入姓名
+				</view> </view>
+				<view class="shiming-tip"> 身份证  <view class="shiming-input">
+					请输入身份证号
+				</view></view>
+				<view class="shiming-warning">
+					*补全资料 加速审核
+				</view>
 			</view>
-		</view>
+			<view class="">
+				<view class="item2">
+						<uni-icons type="arrowright" color="red" size="28" />
+				</view>
+			</view>
+			
+		</view> -->
 		<!-- 芝麻免押 -->
 		<!-- <view class="container quanpinquanjiao marginBotton">
 			<view class="item fxpad mianyaView">
@@ -406,12 +418,12 @@
 				userAuth: '', //权限
 
 				sourceId: '',
-
+isFlashRed:false,
 				safeAreaBottom: 0, //底部安全距离
 				isFristUserInfo: null, //判断该用户是否为首次用户
 
 				isSimple: false, //
-				
+				windowHeight:null,
 				yaJinType: 'zhiNeng',
 			};
 		},
@@ -436,7 +448,11 @@
 			// 
 			this.getSafeAreaBottom();
 
-
+ uni.getSystemInfo({
+      success: (res) => {
+        this.windowHeight = res.windowHeight;
+      }
+    });
 		},
 
 		onShareAppMessage() {
@@ -779,12 +795,23 @@
 					});
 					return;
 				}
-				if (!this.hasCertification) {
-					uni.showToast({
-						title: "请完成实名认证",
-					});
-					return;
-				}
+				// if (!this.hasCertification) {
+				// 	uni.showToast({
+				// 		title: "请完成实名认证",
+				// 	});
+				// 	uni.pageScrollTo({
+				// 	     duration: 300,
+				// 	     selector: '#count_big_box' 
+				// 	});
+					
+				// 	setTimeout(() => {
+				// 	         this.isFlashRed = true;
+				// 	       }, 300);
+				// 	 setTimeout(() => {
+				// 	          this.isFlashRed = false;
+				// 	        }, 1300);
+				// 	return;
+				// }
 				if (!this.isXuzu && (!this.address || !this.address.id)) {
 					// 正常下单需校验地址；续租的话沿用老地址
 					uni.showToast({
@@ -981,13 +1008,13 @@
 					mask: true
 				});
 				// 未进行实名去往实名
-				// if (!this.hasCertification) {
-				// 	this.$uma.trackEvent('2', {
-				// 		path: '去实名认证'
-				// 	});
-				// 	this.$onTo('pages/certificatesSimple/certificatesSimple');
-				// 	return
-				// }
+				if (!this.hasCertification) {
+					this.$uma.trackEvent('2', {
+						path: '去实名认证'
+					});
+					this.$onTo('pages/certificatesSimple/certificatesSimple');
+					return
+				}
 				
 				// ------uni.hideLoading()
 
@@ -1252,11 +1279,48 @@
 	page {
 		padding-bottom: 150rpx;
 	}
-
+	.shiming-left{
+		width:80%;
+		font-size:30rpx;
+	}
+	.shiming-tip{
+		position:relative;
+		margin-bottom:16rpx;
+		font-weight: bold;
+		font-size:30rpx;
+	}
+   .shiming-input{
+	  // font-size:20rpx;
+	   color:#666;
+	   position:absolute;
+	   display: inline-block;
+	   margin:auto;
+	   top:0;
+	   bottom:0;
+	   left:200rpx;
+	   right:0;
+	   font-size:30rpx;
+   }
+   .shiming-warning{
+	   color:red;
+   }
 	view {
 		box-sizing: border-box;
 	}
 
+/* 红色闪烁效果 */
+.flash-red {
+  animation: flash-red 1s ease-in-out 2;
+}
+
+@keyframes flash-red {
+   0%, 100% {
+      background-color: #fff;
+    }
+    25%, 75% {
+      background-color:#ff8484  ;
+    }
+}
 	.confirm {
 		// padding-top: 20rpx;
 

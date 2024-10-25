@@ -326,15 +326,15 @@
               }">
 							<text v-if="day == 180&&data.rentRuleId == 1">6个月灵活租用</text>
 							<text v-if="day == 365&&data.rentRuleId == 1">12个月灵活租用</text>
-							<text v-if="data.rentRuleId !== 1">{{day == 270 || day == 600 ? '租完归还-可随时买断' : day == 365 ? '租完12期即送-租至第7个月起可随租随还' : day + '天'}}</text>
+							<text v-if="data.rentRuleId !== 1">{{day == 270 || day == 600 ? '租完归还-可随时买断' : day == 365 ? '租完即送' : day + '天'}}</text>
 							<image v-if="data.rentRuleId == 1" @click="getServicesData(day)"
 								src="../../static/product/sm.png" mode="scaleToFill" class="sm"></image>
 						</text>
-						<view class="remakeTitle" v-if="choiceDays == 270 || choiceDays == 365 || choiceDays == 600">
+						<!-- <view class="remakeTitle" v-if="choiceDays == 270 || choiceDays == 600">
 							<text class="remakeText1">须知：</text>
 							<text v-if="choiceDays == 270 || choiceDays == 600">租期内，请按时支付每期租金，或您可随时买断商品，获得商品所有权;如未买断，到期后您应按时归还;</text>
 <text v-if="choiceDays == 365">租期内按时支付每期租金，在租至第7个月起，且当期租金已付,不存在任何逾期情形，当期租期内商品支持随时归还，无需支付违约金，当期剩余租金不退;同时您可随时买断商品，或按时支付每期租金，到期后您可0元买断商品，获得商品所有权;</text>
-						</view>
+						</view> -->
 					</view>
 					<view class="choice">
 						<view class="title">起租日期</view>
@@ -751,7 +751,7 @@
 					if(days == 270 || days == 600){
 						daysText = '租完归还-可随时买断'
 					}else if(days == 365){
-						daysText = '租完12期即送-租至第7个月起可随租随还'
+						daysText = '租完即送'
 					}else{
 						daysText = days + '天'
 					}
@@ -778,7 +778,7 @@
 					if(days == 270 || days == 600){
 						daysText = '租完归还-可随时买断'
 					}else if(days == 365){
-						daysText = '租完12期即送-租至第7个月起可随租随还'
+						daysText = '租完即送'
 					}else{
 						daysText = days + '天'
 					}

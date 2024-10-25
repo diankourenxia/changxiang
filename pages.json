@@ -330,6 +330,14 @@
 	  }
 	},
 	{
+	  "path": "pages/activityHot/activityHot",
+	  "style": {
+	    "navigationBarTitleText": "最新活动",
+	    "enablePullDownRefresh": false,
+	    "navigationBarBackgroundColor": "#ffffff"
+	  }
+	},
+	{
 	  "path": "pages/operation/operation",
 	  "style": {
 	    "navigationBarTitleText": "新品上市",
