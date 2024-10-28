@@ -77,34 +77,34 @@
 		data(){
 			return {
 				list:[{
-					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/ae56e75fe56e4812968d465c43e0c3be.jpg',
-					productId:''
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-27/c9d7c26130f641b0ba61fc622125c122.jpg',
+					productId:'1702370255087'
 				},{
-					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/a2d95624ba2e41ea9eb60c7558fc24af.jpg',
-					productId:''
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-27/6352e30233bb40589866ea8542372050.jpg',
+					productId:'1702370249252'
 				}],
 				list2:[{
-					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/2ac51250811041dd97695bdf9ad1a9de.jpg',
-					productId:''
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-27/635650e4e65f4867b1e2d2989b2251a7.jpg',
+					productId:'1702370255087'
 				},{
-					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/0e04f751fda44d2d9cdb2390b01b6d91.jpg',
-					productId:''
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-27/b8edd7a340df485a972563fdfa685362.jpg',
+					productId:'1702375834726'
 				},{
-					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/7fc9cafee49f4013976982ed117b3df9.jpg',
-					productId:''
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-27/eec20dfc3cce452c9e33964bb49904ed.jpg',
+					productId:'1716259857800'
 				}],
 				list3:[{
-					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/2bbfba019e934dd78633fd0f2c3f2cf7.jpg',
-					productId:''
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-27/c7ad6915b00d4b8792a754ef7abbcaa5.jpg',
+					productId:'1730012756643'
 				},{
-					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/9f652a4ee36040399bed0c3f95950f17.jpg',
-					productId:''
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-27/92ddf25e25e84559b26a591d82e13215.jpg',
+					productId:'1730014447063'
 				},{
-					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/817add18c2ea4943bb76c784b5d25ee2.jpg',
-					productId:''
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-27/1f391dcf2bbf4a118d4dd447f3090d77.jpg',
+					productId:'1730015340843'
 				},{
-					image:'https://oss.changxiangwl.cn/backstage/2024-10-24/a0f6fb0950174e288285ebe3b70d16b7.jpg',
-					productId:''
+					image:'https://oss.changxiangwl.cn/backstage/2024-10-27/af02db0321a647839b50ba7e7982780e.jpg',
+					productId:'1730016036765'
 				}],
 			}
 		},
@@ -235,7 +235,7 @@ background: rgb(190,208,234);
 		   
 			// top: 192rpx;
 			// left: 18rpx;
-			background: url('https://oss.changxiangwl.cn/backstage/2024-10-24/f1af82377a1c4d86b4682ebc257cee3a.jpg') no-repeat;
+			background: url('https://oss.changxiangwl.cn/backstage/2024-10-27/5e08209b74f54d9d98dcb3f70feeb604.jpg') no-repeat;
 			  background-size: cover; /* 保持比例，图片会填满容器，可能会被裁剪 */
 			    background-position: 0 0; /* 图片居中显示 */
 
